@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14rem;
+  /* Adjust based on navbar height */
+  padding-bottom: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  isolation: isolate;
+
+  @media (max-width: 768px) {
+    padding-top: 9rem;
+  }
+
+  /* ---- background illustration: pinned to the bottom of the first viewport ---- */
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    margin-top: 10rem;
+    pointer-events: none;
+
+    img {
+      object-fit: contain;
+      object-position: center bottom;
+    }
+  }
+
+  &__content {
+    position: relative;
+    text-align: center;
+    z-index: 10;
+    max-width: 900px;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 5rem;
+    line-height: 0.9;
+    color: #2b2b2b;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
+
+    .hero__highlight {
+      font-style: italic;
+      letter-spacing: -0.04em;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.125rem;
+    color: #8c8c8c;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-family: 'Inter', sans-serif;
+
+    &--primary {
+      background-color: #d8f552;
+      /* Lime green/yellow based on screenshot */
+      color: #000;
+      padding: 12px 32px;
+
+      &:hover {
+        background-color: #c9e44d;
+      }
+    }
+
+    &--secondary {
+      background-color: #ffffff;
+      color: #1f2937;
+      border: 1px solid #e5e7eb;
+      padding: 12px 20px 12px 24px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+      &:hover {
+        background-color: #f9fafb;
+      }
+
+      .play-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background-color: #000;
+        border-radius: 50%;
+        margin-left: 12px;
+
+        .play-icon {
+          width: 12px;
+          height: 12px;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  /* ---- dashboard: in normal flow, BELOW the buttons, spilling past the fold ---- */
+  &__dashboard-wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    // padding: 0 20px;
+    margin-top: 4rem;
+    /* NOTE: perspective is applied on .hero__dashboard itself via framer's
+       `transformPerspective`, not here. An ancestor `perspective` would not
+       reach it — the entrance wrapper in between animates opacity, which
+       force-flattens any 3D context. */
+
+    @media (max-width: 768px) {
+      margin-top: 3.5rem;
+    }
+  }
+
+  &__dashboard-enter {
+    width: 100%;
+    max-width: 1060px;
+    /* centers the fixed-width dashboard inside this box */
+    display: flex;
+    justify-content: center;
+  }
+
+  &__dashboard {
+    position: relative;
+    width: 900px;
+    max-width: 100%;
+    margin-inline: auto;
+    transform-origin: 50% 0%;
+    transform-style: preserve-3d;
+    will-change: transform;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    /* white "fume" — dissolves the bottom edge of the dashboard into the page */
+    &::after {
+      content: '';
+      position: absolute;
+      left: -4%;
+      right: -4%;
+      bottom: -2px;
+      height: 42%;
+      pointer-events: none;
+      border-radius: 0 0 20px 20px;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.55) 40%,
+        rgba(255, 255, 255, 0.88) 70%,
+        #ffffff 100%
+      );
+    }
+  }
+}
