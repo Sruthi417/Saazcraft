@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
 .hero {
   position: relative;
@@ -11,7 +11,7 @@
   /* Adjust based on navbar height */
   padding-bottom: 0;
   overflow: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #ffffff;
   isolation: isolate;
 
@@ -92,13 +92,15 @@
     cursor: pointer;
     transition: all 0.2s ease;
     border: none;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 
     &--primary {
       background-color: #d8f552;
       /* Lime green/yellow based on screenshot */
       color: #000;
       padding: 12px 32px;
+      border: 2px solid #c4d83e;
+      box-shadow: 0 4px 0 #b7c933;
 
       &:hover {
         background-color: #c9e44d;
@@ -110,7 +112,8 @@
       color: #1f2937;
       border: 1px solid #e5e7eb;
       padding: 12px 20px 12px 24px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      border: 2px solid #d8d7cf;
+      box-shadow: 0 4px 0 #c9c8c0;
 
       &:hover {
         background-color: #f9fafb;
@@ -145,10 +148,6 @@
     align-items: flex-start;
     // padding: 0 20px;
     margin-top: 4rem;
-    /* NOTE: perspective is applied on .hero__dashboard itself via framer's
-       `transformPerspective`, not here. An ancestor `perspective` would not
-       reach it — the entrance wrapper in between animates opacity, which
-       force-flattens any 3D context. */
 
     @media (max-width: 768px) {
       margin-top: 3.5rem;
@@ -166,6 +165,7 @@
   &__dashboard {
     position: relative;
     width: 900px;
+    height: 480px;
     max-width: 100%;
     margin-inline: auto;
     transform-origin: 50% 0%;
@@ -175,14 +175,16 @@
     img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 480px; /* Cut down the height naturally */
+      object-fit: cover;
+      object-position: top;
       border-radius: 20px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+      // box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
     }
 
     /* white "fume" — dissolves the bottom edge of the dashboard into the page */
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: -4%;
       right: -4%;
@@ -193,8 +195,8 @@
       background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.55) 40%,
-        rgba(255, 255, 255, 0.88) 70%,
+        rgba(255, 255, 255, 0.55) 45%,
+        rgba(255, 255, 255, 1) 65%,
         #ffffff 100%
       );
     }
