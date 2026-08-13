@@ -1,0 +1,325 @@
+.why-section {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding-top: 0;
+  //   padding-block:
+  //     clamp(3rem, 6vw, 6rem)
+  //     clamp(5rem, 9vw, 9rem);
+
+  overflow: hidden;
+
+  background: #fff;
+
+  isolation: isolate;
+
+  // ==========================================================
+  // LOGOS
+  // ==========================================================
+
+  &__logos {
+    width: 100%;
+margin-bottom: 7rem;
+    // margin-block-end: clamp(5rem, 10vw, 10rem);
+  }
+
+  &__logo-mask {
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  &__logo-track {
+    display: flex;
+
+    width: max-content;
+
+    animation: whyLogoScroll 32s linear infinite;
+
+    will-change: transform;
+  }
+
+  &__logo-group {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: clamp(4rem, 6vw, 7rem);
+
+    padding-inline: clamp(2rem, 4vw, 4rem);
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: clamp(100px, 9vw, 150px);
+
+    height: 25px;
+
+    opacity: 0.7;
+
+    filter: grayscale(1);
+
+    transition: opacity 200ms ease;
+
+    img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      object-fit: contain;
+    }
+  }
+
+  // ==========================================================
+  // CONTENT
+  // ==========================================================
+
+  &__content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: min(calc(100% - 2rem), 900px);
+
+    margin-inline: auto;
+
+    text-align: center;
+  }
+
+  // ==========================================================
+  // TITLE
+  // ==========================================================
+
+  &__title {
+    margin: 0;
+
+    color: #292929;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(56px, 5.2vw, 64px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+
+    will-change: transform, opacity;
+  }
+
+  // ==========================================================
+  // SUBTITLE
+  // ==========================================================
+
+  &__subtitle {
+    max-width: 760px;
+
+    margin-block-start: clamp(1.5rem, 2vw, 2rem);
+
+    color: #969696;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: clamp(1rem, 1.35vw, 1.25rem);
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    will-change: transform, opacity;
+  }
+
+  // ==========================================================
+  // VIDEO AREA
+  // ==========================================================
+
+ &__media {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  margin-block-start: clamp(4rem, 8vw, 6rem);
+
+  padding-inline: clamp(1rem, 4vw, 4rem);
+
+  isolation: isolate;
+}
+  // ==========================================================
+  // YELLOW / GREEN GLOW
+  // ==========================================================
+
+&__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+
+  z-index: -1;
+
+  width: min(95vw, 1300px);
+  aspect-ratio: 16 / 9;
+
+  border-radius: 40px;
+
+  /* Radiant pale yellow */
+  background: #f7f7a4;
+
+  filter: blur(50px);
+
+  pointer-events: none;
+}
+  // ==========================================================
+  // VIDEO WRAPPER
+  // ==========================================================
+
+  &__video-wrap {
+    position: relative;
+
+    width: min(90vw, 1200px);
+
+    transform-origin: 50% 0%;
+
+    transform-style: preserve-3d;
+
+    will-change: transform, opacity;
+
+    overflow: hidden;
+
+    border-radius: clamp(20px, 2vw, 32px);
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+  }
+
+  // ==========================================================
+  // VIDEO
+  // ==========================================================
+
+  &__video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+  }
+
+  // ==========================================================
+  // LOGO ANIMATION
+  // ==========================================================
+
+  @media (prefers-reduced-motion: reduce) {
+    &__logo-track {
+      animation: none;
+    }
+  }
+
+  // ==========================================================
+  // TABLET
+  // ==========================================================
+
+  @media (max-width: 900px) {
+    &__logos {
+      margin-block-end: 6rem;
+    }
+
+    &__logo-group {
+      gap: 4rem;
+    }
+
+    &__media {
+      margin-block-start: 5rem;
+    }
+  }
+
+  // ==========================================================
+  // MOBILE
+  // ==========================================================
+
+  @media (max-width: 600px) {
+    padding-block: 3rem 5rem;
+
+    &__logos {
+      margin-block-end: 5rem;
+    }
+
+    &__logo-group {
+      gap: 3rem;
+
+      padding-inline: 1.5rem;
+    }
+
+    &__logo {
+      width: 100px;
+    }
+
+    &__title {
+      font-size: clamp(2.7rem, 12vw, 4rem);
+
+      letter-spacing: -0.04em;
+    }
+
+    &__subtitle {
+      font-size: 0.95rem;
+
+      line-height: 1.55;
+    }
+
+    &__desktop-break {
+      display: none;
+    }
+
+    &__media {
+      margin-block-start: 4rem;
+
+      padding-inline: 1rem;
+    }
+
+    &__video-wrap {
+      width: 100%;
+
+      border-radius: 18px;
+    }
+
+    &__glow {
+      width: 110vw;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      filter: blur(40px);
+    }
+  }
+}
+
+// ============================================================
+// MARQUEE KEYFRAME
+// ============================================================
+
+@keyframes whyLogoScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
