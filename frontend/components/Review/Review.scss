@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Inter:wght@400;500&display=swap");
+
+.pp {
+  width: 100%;
+  background: var(--brand-light, #ffffff);
+  /* Shared rhythm — symmetric, responsive, aligned to .container-x. */
+ padding: 7rem 12rem 0rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pp-wrap {
+  width: 100%;
+  
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* ---------- Heading ---------- */
+
+.pp-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pp-title {
+  margin-top: 16px;
+  max-width: 560px; /* controls the title wrapping */
+
+  text-align: center;
+  text-wrap: balance;
+
+font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 4.8vw, 64px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--brand-dark, #111);
+}
+
+
+.pp-subtitle {
+  margin-top: 20px;
+  max-width: 550px; /* controls subtitle wrapping */
+
+  text-align: center;
+  text-wrap: balance;
+
+  font-family: "Inter", var(--poppins), sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--brand-sub-txt, #666);
+}
+
+
+.rv-grid {
+  margin-top: clamp(2.5rem, 1rem + 5vw, 4.5rem);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.rv-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+
+.rv-col--mid {
+  padding-top: 5rem;
+  will-change: transform;
+}
+
+.rv-col--side {
+  padding-top: 44px;
+  will-change: transform;
+}
+
+/* ---------- Card ---------- */
+
+.rv-card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 18px;
+  border-radius: 16px;
+  background: #f4f5f0;
+  border: 1.8px dashed #d0cfc4;
+  /* box-shadow: 0 1px 2px rgba(20, 20, 20, 0.04); */
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.rv-card-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: background 0.3s ease;
+}
+
+
+
+.rv-avatar {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(140deg, #e9e9f6 0%, #d9dbef 100%);
+
+  font-family: "Inter", var(--poppins), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #4a4a63;
+}
+
+.rv-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rv-id {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.rv-name {
+  font-family: "Inter", var(--poppins), sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--brand-dark, #111);
+}
+
+.rv-loc {
+  font-family: "Inter", var(--poppins), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--brand-sub-txt, #7a7a7a);
+}
+
+.rv-rating {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  font-family: "Inter", var(--poppins), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brand-dark, #1a1a1a);
+}
+
+.rv-quote {
+  margin: 20px 16px 0;
+  font-family: "Inter", var(--poppins), sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #5b5b59;
+}
+
+
+@media (max-width: 991px) {
+  .rv-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .rv-col {
+    display: contents;
+  }
+
+  .rv-col--mid,
+  .rv-col--side {
+    padding-top: 0;
+  }
+
+  /* 9th card — last card of the last column stack. */
+  .rv-col:last-child .rv-card:last-child {
+    display: none;
+  }
+
+
+  .rv-date {
+    margin: auto 10px 0;
+    padding-top: 18px;
+  }
+}
+
+/* Two-up gets too narrow to read below this, so fall back to one column. */
+@media (max-width: 639px) {
+  .rv-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 460px;
+    margin-inline: auto;
+  }
+}
