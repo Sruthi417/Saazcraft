@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Nav"
 import Motive from "../components/Motive/Motive"
 import Features from "../components/Feature/Feature"
 import {Reviews} from "../components/Review/Review"
+import Tools from "../components/Tools/Tools";
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
       <Motive/>
       <Features/>
       <Reviews/>
+      <Tools/>
      
     </main>
   )
