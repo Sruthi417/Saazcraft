@@ -71,19 +71,7 @@ const toggleVideo = () => {
    */
   const videoOpacity = useTransform(progress, [0, 0.2, 0.5], [0.2, 0.7, 1]);
 
-  /*
-   * Title animation.
-   */
-  const titleY = useTransform(progress, [0, 0.3], [50, 0]);
 
-  const titleOpacity = useTransform(progress, [0, 0.25], [0, 1]);
-
-  /*
-   * Subtitle follows the title.
-   */
-  const subtitleY = useTransform(progress, [0.05, 0.35], [35, 0]);
-
-  const subtitleOpacity = useTransform(progress, [0.05, 0.35], [0, 1]);
 
   return (
     <section ref={sectionRef} className="why-section">
@@ -122,20 +110,20 @@ const toggleVideo = () => {
       <div className="why-section__content">
         <motion.h2
           className="why-section__title"
-          style={{
-            y: titleY,
-            opacity: titleOpacity,
-          }}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           Why SaaZCraft?
         </motion.h2>
 
         <motion.p
           className="why-section__subtitle"
-          style={{
-            y: subtitleY,
-            opacity: subtitleOpacity,
-          }}
+          initial={{ y: 35, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
         >
           SaaZCraft was founded with a vision to simplify SaaS development for
           <br className="why-section__desktop-break" />
@@ -151,6 +139,7 @@ const toggleVideo = () => {
         {/* Green / yellow glow */}
 
         <div className="why-section__glow" aria-hidden="true" />
+        <div className="why-section__glow-bottom" aria-hidden="true" />
 
         <motion.div
           className="why-section__video-wrap"
