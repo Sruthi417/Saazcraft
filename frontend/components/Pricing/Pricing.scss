@@ -1,0 +1,558 @@
+// ==========================================================
+// PRICING SECTION
+// ==========================================================
+
+.pricing-section {
+  width: 100%;
+
+ padding: 9rem 12rem 0rem;
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+// ==========================================================
+// CONTAINER
+// ==========================================================
+
+.pricing-container {
+  max-width: 1400px;
+
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+// ==========================================================
+// TITLE
+// ==========================================================
+
+.pricing-title {
+  margin: 0;
+
+  color: #292929;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  text-align: center;
+}
+
+
+// ==========================================================
+// BILLING TOGGLE
+// ==========================================================
+
+.pricing-toggle {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  margin-top: clamp(3rem, 7vw, 5rem);
+
+  padding: 4px;
+
+  border-radius: 999px;
+
+  background: #f4f3e9;
+
+  border: 1px solid #efeee3;
+}
+
+
+// ==========================================================
+// TOGGLE OPTION
+// ==========================================================
+
+.pricing-toggle__option {
+  position: relative;
+
+  min-width: 140px;
+
+  height: 56px;
+
+  padding-inline: 1.5rem;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #77776f;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: color 0.3s ease;
+}
+
+
+.pricing-toggle__option.active {
+  color: #171717;
+}
+
+.pricing-toggle__indicator {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    0 3px 10px rgba(0, 0, 0, 0.03);
+  z-index: 0;
+}
+
+.pricing-toggle__text {
+  position: relative;
+  z-index: 1;
+}
+
+
+// ==========================================================
+// PRICING GRID
+// ==========================================================
+
+.pricing-grid {
+  width: 100%;
+
+  margin-top: clamp(3rem, 8vw, 5rem);
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: clamp(0.5rem, 3vw, 1.2rem);
+
+  align-items: stretch;
+}
+
+
+// ==========================================================
+// CARD
+// ==========================================================
+
+.pricing-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 500px;
+
+  padding: 8px;
+
+  border: 2px dashed #d9d9ce;
+
+  border-radius: 25px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+// ==========================================================
+// PRICE TOP
+// ==========================================================
+
+.pricing-card__top {
+  min-height: 100px;
+  height: 130px;
+
+  padding: 34px 38px;
+
+  border-radius: 17px;
+
+  background: #f5f5eb;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+// Middle card — white price panel
+
+.pricing-card--featured {
+  background: #f7f7eb;
+}
+
+
+.pricing-card--featured .pricing-card__top {
+  background: #ffffff;
+}
+
+
+// ==========================================================
+// PLAN NAME
+// ==========================================================
+
+.pricing-card__name {
+  margin: 0 0 14px;
+
+  color: #181818;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+// ==========================================================
+// PRICE
+// ==========================================================
+
+.pricing-card__price {
+  display: flex;
+
+  align-items: baseline;
+
+  white-space: nowrap;
+}
+
+
+.pricing-card__amount {
+  color: #050505;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(46px, 5vw, 56px);
+
+  font-weight: 600;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+
+.pricing-card__period {
+  margin-left: 7px;
+
+  color: #151515;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+
+  font-weight: 500;
+}
+
+
+.pricing-card__custom {
+  color: #050505;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(46px, 4.5vw, 56px);
+
+  font-weight: 600;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+
+// ==========================================================
+// DESCRIPTION
+// ==========================================================
+
+.pricing-card__description {
+  margin: 26px 32px 0;
+
+  color: #898983;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+
+// ==========================================================
+// FEATURES
+// ==========================================================
+
+.pricing-card__features {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin: 22px 32px 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.pricing-card__features li {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #161616;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+
+  font-weight: 400;
+
+  line-height: 1.3;
+}
+
+
+.pricing-card__bullet {
+  flex-shrink: 0;
+
+  color: #111;
+
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+
+// ==========================================================
+// BUTTON
+// ==========================================================
+
+.pricing-card__button {
+  width: calc(100% - 24px);
+
+  min-height: 70px;
+
+  margin: auto 12px 12px;
+
+  padding-inline: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: 0;
+
+  border-radius: 17px;
+
+  background: #303030;
+
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.pricing-card__button:hover {
+  background: #222222;
+
+  // transform: translateY(-2px);
+}
+
+
+.pricing-card__arrow {
+  font-size: 22px;
+
+  line-height: 1;
+
+  transition: transform 0.25s ease;
+}
+
+
+.pricing-card__button:hover .pricing-card__arrow {
+  transform: translateX(4px);
+}
+
+
+// ==========================================================
+// TABLET
+// ==========================================================
+
+@media (max-width: 1000px) {
+
+  .pricing-container {
+    width: min(92vw, 760px);
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+  }
+
+  .pricing-card:last-child {
+    grid-column: 1 / -1;
+
+    max-width: calc(50% - 0.75rem);
+
+    width: 100%;
+
+    justify-self: center;
+  }
+
+  .pricing-card__top {
+    padding-inline: 28px;
+  }
+
+  .pricing-card__description,
+  .pricing-card__features {
+    margin-inline: 24px;
+  }
+}
+
+
+// ==========================================================
+// MOBILE
+// ==========================================================
+
+@media (max-width: 650px) {
+
+  .pricing-section {
+    padding-block: 4rem 5rem;
+  }
+
+  .pricing-container {
+    width: calc(100% - 2rem);
+  }
+
+  .pricing-title {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .pricing-toggle {
+    margin-top: 3rem;
+  }
+
+  .pricing-toggle__option {
+    min-width: 110px;
+
+    height: 48px;
+
+    font-size: 15px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 4rem;
+
+    gap: 1.25rem;
+  }
+
+  .pricing-card:last-child {
+    grid-column: auto;
+
+    max-width: none;
+
+    width: 100%;
+  }
+
+  .pricing-card {
+    min-height: 560px;
+  }
+
+  .pricing-card__top {
+    min-height: 155px;
+
+    padding: 28px 26px;
+  }
+
+  .pricing-card__amount {
+    font-size: 3.2rem;
+  }
+
+  .pricing-card__custom {
+    font-size: 3.2rem;
+  }
+
+  .pricing-card__description {
+    margin-top: 28px;
+
+    margin-inline: 24px;
+  }
+
+  .pricing-card__features {
+    margin-top: 30px;
+
+    margin-inline: 24px;
+
+    gap: 17px;
+  }
+
+  .pricing-card__button {
+    min-height: 64px;
+
+    margin-inline: 10px;
+
+    width: calc(100% - 20px);
+  }
+}
+
+
+// ==========================================================
+// SMALL MOBILE
+// ==========================================================
+
+@media (max-width: 400px) {
+
+  .pricing-title {
+    font-size: 2.7rem;
+  }
+
+  .pricing-toggle__option {
+    min-width: 100px;
+  }
+
+  .pricing-card__top {
+    padding-inline: 22px;
+  }
+
+  .pricing-card__description,
+  .pricing-card__features {
+    margin-inline: 20px;
+  }
+}

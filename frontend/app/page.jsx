@@ -4,6 +4,7 @@ import Motive from "../components/Motive/Motive"
 import Features from "../components/Feature/Feature"
 import {Reviews} from "../components/Review/Review"
 import Tools from "../components/Tools/Tools";
+import Pricing from "../components/Pricing/Pricing";
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
       <Features/>
       <Reviews/>
       <Tools/>
+      <Pricing/>
      
     </main>
   )
