@@ -27,7 +27,7 @@ const features = {
         "Priority Setting",
         "Progress Tracking",
       ],
-      image: "/FeaturedImages/card1.png",
+      image:"/card1.png",
       icon: DocumentDownload,
     },
     {
@@ -40,7 +40,7 @@ const features = {
         "File Sharing",
         "Collaborative Spaces",
       ],
-      image: "/FeaturedImages/card2.png",
+      image: "/card2.png",
       icon: Setting2,
     },
     {
@@ -53,7 +53,7 @@ const features = {
         "Customizable Dashboards",
         "Predictive Analysis",
       ],
-      image: "/FeaturedImages/card3.png",
+      image: "/card3.png",
       icon: ShieldTick,
     },
   ],
@@ -63,28 +63,7 @@ export function Features() {
   return (
     <section className="pp-sec">
       <div className="pp-wrap">
-        <motion.div
-          className="pp-heading"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.15,
-              },
-            },
-          }}
-        >
-          <motion.h2 className="pp-title" variants={item}>
-            {features.title}
-          </motion.h2>
-
-          <motion.p className="pp-subtitle" variants={item}>
-            {features.subtitle}
-          </motion.p>
-        </motion.div>
+       
 
         <div className="feature-cards-container">
           {features.items.map((feature, idx) => {
@@ -100,7 +79,7 @@ export function Features() {
               >
                 <div className="feature-content">
                   <div className="feature-icon-wrapper">
-                    <IconComponent size="24" color="#4d64ff" variant="Bold" />
+                    <IconComponent size="40" color="#000" variant="Bold" />
                   </div>
                   <h3 className="feature-title">{feature.title}</h3>
 

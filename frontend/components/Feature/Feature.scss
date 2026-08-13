@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Inter:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Inter:wght@400;500&display=swap");
 
 .pp-sec {
   width: 100%;
   background: var(--brand-light, #ffffff);
-  /* Shared rhythm — symmetric, responsive, aligned to .container-x. */
- padding:6rem 10rem 3rem ;
+
+  padding: 0 16rem 3rem;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -12,53 +12,11 @@
 
 .pp-wrap {
   width: 100%;
-  /* Content box matches .container-x (--container minus both gutters),
-     so every section's text starts on the same vertical line. */
+
   max-width: calc(var(--container) - 2 * var(--gutter));
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-
-
-
-/* ---------- Heading ---------- */
-
-.pp-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.pp-title {
-  margin-top: 16px;
-  max-width: 560px; /* controls the title wrapping */
-
-  text-align: center;
-  text-wrap: balance;
-
-  font-family: "IBM Plex Sans", var(--poppins), sans-serif;
-  font-size: clamp(34px, 4.4vw, 48px);
-  font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-  color: var(--brand-dark, #111);
-}
-
-.pp-subtitle {
-  margin-top: 20px;
-  max-width: 620px; /* controls subtitle wrapping */
-
-  text-align: center;
-  text-wrap: balance;
-
-  font-family: "Inter", var(--poppins), sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--brand-sub-txt, #666);
 }
 
 /* ---------- Feature Cards ---------- */
@@ -73,7 +31,7 @@
 
 .feature-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 60px;
   width: 100%;
@@ -92,12 +50,12 @@
 }
 
 .feature-icon-wrapper {
-  width: 48px;
+  width: 54px;
   height: 48px;
   border-radius: 12px;
-  background: #eeedf8;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  background-color: #d8f552;
+  border: 2px solid #c4d83e;
+  box-shadow: 0 4px 0 #b7c933;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,24 +63,22 @@
 }
 
 .feature-icon-wrapper svg {
-  width: 24px;
-  height: 24px;
+  width: 38px;
+  height: 28px;
   color: #3f681c;
 }
 
 .feature-title {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 500;
   color: #111;
-  
+
   margin: 0;
   margin-bottom: 1rem;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
-
-
 
 .feature-desc {
   font-family: "Inter", sans-serif;
@@ -163,8 +119,8 @@
   max-width: 450px;
   height: auto;
   border-radius: 32px;
-  // background: #f8f7f2; 
-  background: #eeedf8; 
+  // background: #f8f7f2;
+  background:#f5f5eb;
   padding: 2.5rem;
 
   display: flex;
@@ -182,11 +138,12 @@
 }
 
 @media (max-width: 992px) {
-  .feature-card, .feature-card.reverse {
+  .feature-card,
+  .feature-card.reverse {
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .feature-content {
     max-width: 100%;
     align-items: flex-start;
@@ -194,7 +151,7 @@
   }
 
   .feature-title {
-   max-width: 650px;
+    max-width: 650px;
   }
   .feature-list {
     align-items: flex-start;
@@ -203,7 +160,7 @@
   .feature-subtitle {
     max-width: 650px;
   }
-  
+
   .feature-illustration-image {
     // width: 100%;
     // max-width: 100%;
@@ -213,7 +170,7 @@
   .feature-img {
     width: 400px;
     // max-width: 280px; /* Reduced max-width */
-    height: 400px;    /* Increased height */
+    height: 400px; /* Increased height */
     object-fit: cover;
   }
 }
