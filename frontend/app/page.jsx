@@ -9,6 +9,7 @@ import Partner from "../components/Partners/Partner";
 import Team from "../components/Team/Team";
 import FAQ from "../components/Faq/Faq";
 import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 
 const page = () => {
   return (
@@ -24,6 +25,7 @@ const page = () => {
       <Team/>
       <FAQ/>
       <Contact/>
+      <Footer/>
      
     </main>
   )

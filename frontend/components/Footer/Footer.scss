@@ -1,0 +1,500 @@
+// ==========================================================
+// FOOTER
+// ==========================================================
+
+.footer {
+  width: 100%;
+  padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 5vw, 5rem) 5rem;
+
+  background: #fff;
+
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+// ==========================================================
+// FOOTER CARD
+// ==========================================================
+
+.footer-card {
+  position: relative;
+
+  width: 100%;
+
+  height: clamp(300px, 25vw, 400px);
+
+  overflow: hidden;
+
+  border-radius: clamp(28px, 3vw, 48px);
+
+  background: #d9f351;
+
+  color: #050505;
+}
+
+// ==========================================================
+// DECORATIVE CIRCLES
+// ==========================================================
+
+.footer-circles {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  z-index: 1;
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .circle-1 {
+    width: 60px;
+    height: 60px;
+    top: -15px;
+    right: 180px;
+  }
+
+  .circle-2 {
+    width: 90px;
+    height: 90px;
+    top: -25px;
+    right: 80px;
+  }
+
+  .circle-3 {
+    width: 120px;
+    height: 120px;
+    top: -40px;
+    right: -30px;
+  }
+
+  .circle-4 {
+    width: 60px;
+    height: 60px;
+    top: 75px;
+    right: 150px;
+  }
+
+  .circle-5 {
+    width: 80px;
+    height: 80px;
+    top: 110px;
+    right: 40px;
+  }
+}
+
+
+// ==========================================================
+// TOP LOGO
+// ==========================================================
+
+.footer-logo {
+
+    display: flex;
+    align-items: center;
+
+    justify-self: start;
+margin-top: 3rem;
+margin-left: 3rem;
+    width: clamp(
+      175px,
+      12vw,
+      215px
+    );
+
+    text-decoration: none;
+
+
+    img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+
+
+// ==========================================================
+// LEFT NAVIGATION
+// ==========================================================
+
+.footer-nav {
+  position: absolute;
+
+  top: clamp(10rem, 11vw, 11rem);
+  left: clamp(2rem, 3vw, 3.5rem);
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.9rem;
+}
+
+.footer-nav a {
+  color: #050505;
+
+  text-decoration: none;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+
+  line-height: 1.1;
+
+  transition: opacity 0.2s ease;
+}
+
+.footer-nav a:hover {
+  opacity: 0.55;
+}
+
+
+// ==========================================================
+// CENTER CONTACT
+// ==========================================================
+
+.footer-contact {
+  position: absolute;
+
+  top: clamp(9.5rem, 10vw, 10.5rem);
+  left: 50%;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  transform: translateX(-50%);
+
+  text-align: center;
+}
+
+.footer-contact h3 {
+  margin: 0 0 1rem;
+
+  color: rgba(0, 0, 0, 0.4);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(1.5rem, 2vw, 2rem);
+
+  font-weight: 500;
+}
+
+.footer-contact a {
+  color: #000;
+
+  text-decoration: none;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(1.1rem, 1.5vw, 1.55rem);
+
+  font-weight: 500;
+
+  line-height: 1.8;
+}
+
+
+// ==========================================================
+// SOCIAL LINKS
+// ==========================================================
+
+.footer-socials {
+  position: absolute;
+
+  top: clamp(9.5rem, 10vw, 10.5rem);
+  right: clamp(2rem, 3vw, 3.5rem);
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 0.9rem;
+}
+
+.footer-socials a {
+  color: #050505;
+
+  text-decoration: none;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+
+  line-height: 1.1;
+
+  transition: opacity 0.2s ease;
+}
+
+.footer-socials a:hover {
+  opacity: 0.55;
+}
+
+
+// ==========================================================
+// LARGE SAAZCRAFT WORDMARK
+// ==========================================================
+
+.footer-wordmark {
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  margin-top: 3rem;
+
+  color: #000;
+
+  font-family: "Playfair Display", serif;
+
+  /*
+    This is the large decorative text
+    at the bottom of the reference.
+  */
+
+  font-size: clamp(8rem, 24vw, 30rem);
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  line-height: 0.75;
+
+  letter-spacing: -0.05em;
+
+  white-space: nowrap;
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+.footer-copyright{
+  margin-top: 5rem;
+  font-size: 16px;
+  color: #646262;
+}
+
+// ==========================================================
+// TABLET
+// ==========================================================
+
+@media (max-width: 900px) {
+
+  .footer-card {
+    height: 380px;
+  }
+
+  .footer-contact {
+    top: 9.5rem;
+  }
+
+  .footer-wordmark {
+    font-size: clamp(8rem, 23vw, 14rem);
+  }
+}
+
+
+// ==========================================================
+// MOBILE
+// ==========================================================
+
+@media (max-width: 650px) {
+
+  .footer {
+    padding: 2rem 1rem 0;
+  }
+
+  .footer-card {
+    height: 480px;
+
+    border-radius: 28px;
+  }
+
+  // --------------------------------------------------------
+  // Logo
+  // --------------------------------------------------------
+
+  .footer-logo {
+    top: 2rem;
+    left: 2rem;
+  }
+
+  .footer-logo-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .footer-logo-mark span {
+    width: 7px;
+    height: 7px;
+  }
+
+  .footer-logo-mark span:nth-child(1) {
+    top: 2px;
+    left: 14px;
+  }
+
+  .footer-logo-mark span:nth-child(2) {
+    top: 9px;
+    left: 6px;
+  }
+
+  .footer-logo-mark span:nth-child(3) {
+    top: 9px;
+    left: 22px;
+  }
+
+  .footer-logo-mark span:nth-child(4) {
+    top: 16px;
+    left: 14px;
+  }
+
+  .footer-logo-mark span:nth-child(5) {
+    top: 16px;
+    left: 0;
+  }
+
+  .footer-logo-mark span:nth-child(6) {
+    top: 16px;
+    left: 28px;
+  }
+
+  .footer-logo-mark span:nth-child(7) {
+    top: 23px;
+    left: 14px;
+  }
+
+  .footer-logo-text {
+    font-size: 1.8rem;
+  }
+
+
+  // --------------------------------------------------------
+  // Navigation
+  // --------------------------------------------------------
+
+  .footer-nav {
+    top: 8rem;
+    left: 2rem;
+
+    gap: 0.8rem;
+  }
+
+
+  // --------------------------------------------------------
+  // Contact
+  // --------------------------------------------------------
+
+  .footer-contact {
+    top: 8rem;
+    left: auto;
+    right: 2rem;
+
+    align-items: flex-end;
+
+    transform: none;
+
+    text-align: right;
+  }
+
+  .footer-contact h3 {
+    margin-bottom: 0.6rem;
+
+    font-size: 1.35rem;
+  }
+
+  .footer-contact a {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+
+  // --------------------------------------------------------
+  // Socials
+  // --------------------------------------------------------
+
+  .footer-socials {
+    top: 20rem;
+    right: 2rem;
+
+    gap: 0.8rem;
+  }
+
+  .footer-socials a {
+    font-size: 1rem;
+  }
+
+
+  // --------------------------------------------------------
+  // Large Wordmark
+  // --------------------------------------------------------
+
+  .footer-wordmark {
+    font-size: 27vw;
+
+    line-height: 0.7;
+  }
+}
+
+
+// ==========================================================
+// SMALL MOBILE
+// ==========================================================
+
+@media (max-width: 400px) {
+
+  .footer-card {
+    height: 480px;
+  }
+
+  .footer-contact {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    padding-top: 15rem;
+    padding-right: 2rem;
+
+    align-items: flex-end;
+
+    text-align: right;
+  }
+
+  .footer-nav {
+    top: 8rem;
+  }
+
+  .footer-socials {
+    top: 20rem;
+  }
+
+  .footer-wordmark {
+    font-size: 25vw;
+  }
+}
