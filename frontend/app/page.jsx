@@ -7,6 +7,8 @@ import Tools from "../components/Tools/Tools";
 import Pricing from "../components/Pricing/Pricing";
 import Partner from "../components/Partners/Partner";
 import Team from "../components/Team/Team";
+import FAQ from "../components/Faq/Faq";
+import Contact from "../components/Contact/Contact";
 
 const page = () => {
   return (
@@ -20,6 +22,8 @@ const page = () => {
       <Pricing/>
       <Partner/>
       <Team/>
+      <FAQ/>
+      <Contact/>
      
     </main>
   )

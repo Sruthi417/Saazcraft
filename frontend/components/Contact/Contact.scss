@@ -1,0 +1,330 @@
+// ==========================================================
+// CONTACT SECTION
+// ==========================================================
+
+.contact-section {
+  width: 100%;
+  padding: 5rem 10rem 7rem;
+
+  background: #fff;
+}
+
+// ==========================================================
+// WRAPPER
+// ==========================================================
+
+.contact-wrapper {
+  max-width: 1400px;
+  min-height: 650px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: clamp(0.5rem, 8vw, 2rem);
+}
+
+// ==========================================================
+// LEFT CONTENT
+// ==========================================================
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  //   padding-left: clamp(0rem, 1vw, 1rem);
+}
+
+// ==========================================================
+// TITLE
+// ==========================================================
+
+.contact-title {
+  margin: 0;
+
+  color: #292929;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(56px, 5vw, 64px);
+  max-width: 600px;
+  font-weight: 400;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+}
+
+// ==========================================================
+// DESCRIPTION
+// ==========================================================
+
+.contact-description {
+  width: min(100%, 720px);
+
+  margin: clamp(0.5rem, 2vw, 1rem) 0 0;
+
+  color: #85857e;
+  max-width: 600px;
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  letter-spacing: -0.015em;
+}
+
+// ==========================================================
+// FORM CARD
+// ==========================================================
+
+.contact-form-card {
+  width: 100%;
+
+  padding: clamp(1.5rem, 2vw, 1.8rem);
+
+  box-sizing: border-box;
+
+  background: #f7f7eb;
+
+  border: 2px dashed #d8d8ca;
+
+  border-radius: clamp(24px, 2vw, 32px);
+}
+
+// ==========================================================
+// FORM
+// ==========================================================
+
+.contact-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+// ==========================================================
+// FIELD
+// ==========================================================
+
+.form-field {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.7rem;
+
+  label {
+    color: #85857e;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.95rem;
+
+    font-weight: 400;
+  }
+}
+
+// ==========================================================
+// INPUT + TEXTAREA
+// ==========================================================
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 14px;
+
+  background: #fff;
+
+  color: #333;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &::placeholder {
+    color: #9299a3;
+    opacity: 1;
+  }
+
+  &:focus {
+    border-color: #d2d2c6;
+
+    box-shadow: 0 0 0 3px rgba(210, 210, 198, 0.18);
+  }
+}
+
+// ==========================================================
+// INPUT
+// ==========================================================
+
+.form-field input {
+  height: clamp(50px, 5vw, 60px);
+
+  padding: 0 1.4rem;
+}
+
+// ==========================================================
+// TEXTAREA
+// ==========================================================
+
+.form-field textarea {
+  height: clamp(190px, 15vw, 210px);
+
+  padding: 1.4rem;
+
+  resize: none;
+
+  line-height: 1.5;
+}
+
+// ==========================================================
+// SUBMIT BUTTON
+// ==========================================================
+
+.contact-submit {
+  width: 100%;
+
+  height: clamp(55px, 4vw, 58px);
+
+  margin-top: 0.1rem;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #303030;
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    background: #202020;
+
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ==========================================================
+// TABLET
+// ==========================================================
+
+@media (max-width: 1000px) {
+  .contact-wrapper {
+    width: min(90vw, 700px);
+
+    grid-template-columns: 1fr;
+
+    gap: 4rem;
+
+    min-height: auto;
+  }
+
+  .contact-content {
+    text-align: center;
+
+    align-items: center;
+  }
+
+  .contact-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .contact-description {
+    max-width: 650px;
+  }
+
+  .contact-form-card {
+    width: 100%;
+  }
+}
+
+// ==========================================================
+// MOBILE
+// ==========================================================
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 5rem 0;
+  }
+
+  .contact-wrapper {
+    width: calc(100% - 2rem);
+
+    gap: 3rem;
+  }
+
+  .contact-title {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+
+    line-height: 1;
+  }
+
+  .contact-description {
+    font-size: 0.95rem;
+
+    line-height: 1.55;
+  }
+
+  .contact-form-card {
+    padding: 1.2rem;
+
+    border-radius: 24px;
+  }
+
+  .contact-form {
+    gap: 1.3rem;
+  }
+
+  .form-field input {
+    height: 62px;
+
+    padding-inline: 1.1rem;
+  }
+
+  .form-field textarea {
+    height: 170px;
+
+    padding: 1.1rem;
+  }
+
+  .contact-submit {
+    height: 55px;
+  }
+}
