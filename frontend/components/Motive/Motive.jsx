@@ -125,7 +125,7 @@ const toggleVideo = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
         >
-          SaaZCraft was founded with a vision to simplify SaaS development for
+          SaaSCraft was founded with a vision to simplify SaaS development for
           <br className="why-section__desktop-break" />
           growing businesses by providing an intuitive and powerful toolset.
         </motion.p>
@@ -139,7 +139,6 @@ const toggleVideo = () => {
         {/* Green / yellow glow */}
 
         <div className="why-section__glow" aria-hidden="true" />
-        <div className="why-section__glow-bottom" aria-hidden="true" />
 
         <motion.div
           className="why-section__video-wrap"

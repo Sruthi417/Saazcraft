@@ -152,20 +152,16 @@ margin-bottom: 7rem;
   // VIDEO AREA
   // ==========================================================
 
- &__media {
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
-
-  margin-block-start: clamp(3rem, 8vw, 4rem);
-
-  padding-inline: clamp(1rem, 4vw, 4rem);
-
-  isolation: isolate;
-}
+  &__media {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-block-start: clamp(3rem, 8vw, 4rem);
+    padding-inline: clamp(1rem, 4vw, 4rem);
+    isolation: isolate;
+  }
   // ==========================================================
   // YELLOW / GREEN GLOW
   // ==========================================================
@@ -312,7 +308,11 @@ margin-bottom: 7rem;
     padding-block: 3rem 5rem;
 
     &__logos {
-      margin-block-end: 5rem;
+      margin-block-end: 4rem;
+    }
+
+    &__content {
+      width: min(calc(100% - 3rem), 900px);
     }
 
     &__logo-group {
@@ -326,14 +326,12 @@ margin-bottom: 7rem;
     }
 
     &__title {
-      font-size: clamp(2.7rem, 12vw, 4rem);
-
+      font-size: clamp(2.4rem, 10vw, 3.5rem);
       letter-spacing: -0.04em;
     }
 
     &__subtitle {
-      font-size: 0.95rem;
-
+      font-size: 1rem;
       line-height: 1.55;
     }
 
@@ -342,9 +340,10 @@ margin-bottom: 7rem;
     }
 
     &__media {
-      margin-block-start: 4rem;
-
-      padding-inline: 1rem;
+      margin-block-start: 3rem;
+      padding-inline: 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     &__video-wrap {
@@ -357,12 +356,6 @@ margin-bottom: 7rem;
       width: 110vw;
       aspect-ratio: 16 / 9;
       height: auto;
-      filter: blur(40px);
-    }
-
-    &__glow-bottom {
-      width: 100vw;
-      height: 100px;
       filter: blur(40px);
     }
   }

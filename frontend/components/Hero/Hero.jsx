@@ -43,7 +43,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero" ref={heroRef}>
+    <motion.section className="hero" ref={heroRef}>
       <div className="hero__background">
         <Image
           src="/hero-main.avif"
@@ -111,7 +111,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
