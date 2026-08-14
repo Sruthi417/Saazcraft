@@ -106,7 +106,6 @@ const Hero = () => {
               width={1600}
               height={1000}
               sizes="(max-width: 1100px) 100vw, 1060px"
-              style={{ width: '100%', height: 'auto' }}
               priority
             />
           </motion.div>

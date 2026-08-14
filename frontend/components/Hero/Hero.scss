@@ -15,6 +15,14 @@
   background-color: #ffffff;
   isolation: isolate;
 
+  /* 1rem off the desktop value once the navbar collapses, so the gap
+     between navbar and headline tightens.
+     NOTE: keep this ABOVE the 768px block — both match at <=768px with
+     equal specificity, so the later block has to be the winner there. */
+  @media (max-width: 800px) {
+    padding-top: 13rem;
+  }
+
   @media (max-width: 768px) {
     padding-top: 9rem;
   }
@@ -146,7 +154,11 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    // padding: 0 20px;
+    /* Gutter on both sides so the trees/grass stay visible past the
+       dashboard as the viewport narrows. Inert on desktop: the dashboard is
+       a fixed 900px, so this only starts to bite below ~964px, where
+       `max-width: 100%` would otherwise let it reach both edges. */
+    padding-inline: clamp(1rem, 4vw, 2rem);
     margin-top: 4rem;
 
     @media (max-width: 768px) {
@@ -175,11 +187,29 @@
     img {
       display: block;
       width: 100%;
-      height: 480px; /* Cut down the height naturally */
+      /* Fill the box rather than hard-coding 480px — the box below decides
+         the crop, so height follows the width down instead of staying tall
+         and leaving dead space under the image. */
+      height: 100%;
       object-fit: cover;
       object-position: top;
       border-radius: 20px;
       // box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Below the point where 900px can still fit, swap the fixed height for
+       the same 900:480 proportion, so the height scales down with the width
+       and never grows when the padding-inline narrows the box. */
+    @media (max-width: 1000px) {
+      height: auto;
+      aspect-ratio: 900 / 480;
+    }
+
+    /* On phones, 1.875:1 gets too letterboxed to read. 16:10 matches the
+       image's own 1600x1000 ratio, so the whole dashboard shows uncropped —
+       the end result in the reference. */
+    @media (max-width: 600px) {
+      aspect-ratio: 16 / 10;
     }
 
     /* white "fume" — dissolves the bottom edge of the dashboard into the page */

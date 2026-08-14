@@ -120,7 +120,7 @@ function ReviewCard({ review, delay }){
 }
 
 export function Reviews() {
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef(null);
   const reduceMotion = useReducedMotion();
 
   // Drift is desktop-only. Must match the 992px breakpoint in
