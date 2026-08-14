@@ -221,64 +221,100 @@
 
 
   // =========================================================
-  // TABLET
+  // TOGGLE & MENU (Desktop Defaults)
+  // =========================================================
+
+  &__toggle {
+    display: none; // Hidden on desktop
+  }
+
+  &__menu {
+    display: contents; // Treat children as direct children of grid on desktop
+  }
+
+  // =========================================================
+  // TABLET / MOBILE
   // =========================================================
 
   @media (max-width: 800px) {
     padding-inline: 1.5rem;
 
-
-    &__logo {
-      width: 175px;
-    }
-
-
-    &__nav {
-      gap: 1.5rem;
-
-      padding-inline: 1.2rem;
-    }
-
-
-    &__cta {
-      min-width: 10rem;
-    }
-  }
-
-
-  // =========================================================
-  // MOBILE
-  // =========================================================
-
-  @media (max-width: 650px) {
     &__inner {
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr auto; // logo on left, toggle on right
     }
-
-
-    &__nav {
-      display: none;
-    }
-
 
     &__logo {
-      width: 165px;
+      width: 160px;
     }
 
+    &__toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: end;
+
+      width: 44px;
+      height: 44px;
+
+      background: #f3f2e9;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #000;
+
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background: #e5e4d9;
+      }
+    }
+
+    &__menu {
+      display: none; // Hidden by default on small screens
+
+      &--open {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 / -1; // Span full width below header
+        width: 100%;
+        margin-top: 1.5rem;
+        gap: 1.5rem;
+        
+        animation: fadeIn 0.2s ease;
+      }
+    }
+
+    &__nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.5rem 1.5rem;
+      gap: 1.5rem;
+      width: 100%;
+      border-radius: 17px;
+      
+      a {
+        width: 100%;
+        font-size: 1.1rem;
+      }
+    }
 
     &__cta {
-      min-width: 9rem;
-
-      min-height: 3.2rem;
-
-      padding-inline: 1.1rem;
-
-      border-radius: 14px;
-
-      font-size: 0.9rem;
+      justify-self: stretch;
+      width: 100%;
+      min-width: 100%;
     }
   }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   // =========================================================
   // SMALL MOBILE
@@ -287,22 +323,8 @@
   @media (max-width: 420px) {
     padding-inline: 1rem;
 
-
     &__logo {
       width: 145px;
-    }
-
-
-    &__cta {
-      min-width: auto;
-
-      min-height: 2.9rem;
-
-      padding-inline: 1rem;
-
-      border-radius: 13px;
-
-      font-size: 0.82rem;
     }
   }
 }
