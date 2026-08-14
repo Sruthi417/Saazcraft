@@ -151,7 +151,7 @@ export function Reviews() {
   const ySide = useSpring(ySideRaw, { stiffness: 90, damping: 24, mass: 0.4 });
 
   return (
-    <div className="pp">
+    <div className="pp" ref={sectionRef}>
       <div className="pp-wrap">
         <div className="pp-heading">
           <motion.h2 
