@@ -4,7 +4,10 @@
   width: 100%;
   background: var(--brand-light, #ffffff);
   /* Shared rhythm — symmetric, responsive, aligned to .container-x. */
- padding: 7rem 12rem 1rem;
+//  padding: 7rem 12rem 1rem;
+ box-sizing: border-box;
+  padding-inline: clamp(1.25rem, 13.5vw, 12rem);
+  padding-top: clamp(5rem, 13.5vw, 7rem);
   display: flex;
   justify-content: center;
   overflow: hidden;

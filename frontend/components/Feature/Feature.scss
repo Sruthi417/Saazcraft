@@ -5,16 +5,7 @@
   box-sizing: border-box;
   background: var(--brand-light, #ffffff);
 
-  /*
-   * The side padding has to scale. A flat 16rem is 256px PER SIDE, so
-   * under ~512px of viewport the content box collapses to zero and the
-   * left pad shunts everything off to the right — which is why the cards
-   * appeared pushed to the side on small screens.
-   *
-   * 13.5vw reaches the 16rem ceiling at ~1900px, so wide desktops are
-   * unchanged; below ~1592px `.pp-wrap`'s max-width: 1080px is the real
-   * constraint anyway, so the visible layout there is untouched too.
-   */
+ 
   padding-block: 0 3rem;
   padding-inline: clamp(1.25rem, 13.5vw, 16rem);
   display: flex;
