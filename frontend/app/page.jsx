@@ -6,6 +6,7 @@ import {Reviews} from "../components/Review/Review"
 import Tools from "../components/Tools/Tools";
 import Pricing from "../components/Pricing/Pricing";
 import Partner from "../components/Partners/Partner";
+import Team from "../components/Team/Team";
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
       <Tools/>
       <Pricing/>
       <Partner/>
+      <Team/>
      
     </main>
   )
