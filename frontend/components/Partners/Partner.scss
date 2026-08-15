@@ -4,8 +4,10 @@
 
 .partner-section {
   width: 100%;
-  padding: 9rem 12rem 9rem;
 
+  box-sizing: border-box;
+  padding-inline: clamp(1.25rem, 13.5vw, 12rem);
+  padding-top: clamp(5rem, 13.5vw, 7rem);
   background: #ffffff;
 
   overflow: hidden;
@@ -44,7 +46,7 @@
 
   width: 100%;
 
-//   aspect-ratio: 1 / 1;
+  //   aspect-ratio: 1 / 1;
 
   max-width: 650px;
 
@@ -244,7 +246,7 @@
 
 
 
-.partner-button:hover  {
+.partner-button:hover {
   transform: translateX(4px);
 }
 
@@ -377,6 +379,7 @@
 // ==========================================================
 
 @media (prefers-reduced-motion: reduce) {
+
   .partner-image,
   .partner-content * {
     animation: none !important;

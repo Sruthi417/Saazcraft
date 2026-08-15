@@ -200,7 +200,7 @@ font-family: "Playfair Display", serif;
 }
 
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .rv-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
@@ -217,9 +217,9 @@ font-family: "Playfair Display", serif;
   }
 
   /* 9th card — last card of the last column stack. */
-  .rv-col:last-child .rv-card:last-child {
-    display: none;
-  }
+  // .rv-col:last-child .rv-card:last-child {
+  //   display: none;
+  // }
 
 
   .rv-date {
@@ -227,9 +227,18 @@ font-family: "Playfair Display", serif;
     padding-top: 18px;
   }
 }
+@media (max-width: 992px) {
+  .pp {
+    padding-inline: clamp(3rem, 4vw, 6rem);
+  }
+}
 
 /* Two-up gets too narrow to read below this, so fall back to one column. */
-@media (max-width: 639px) {
+@media (max-width: 650px) {
+  .pp {
+    padding-inline: clamp(2rem, 4vw, 4rem);
+  }
+
   .rv-grid {
     grid-template-columns: minmax(0, 1fr);
     max-width: 460px;
