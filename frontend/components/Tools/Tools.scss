@@ -4,9 +4,9 @@
 
 .integrations-section {
   width: 100%;
-
+  box-sizing: border-box;
   padding-block: clamp(4rem, 8vw, 8rem);
-padding-inline: 12rem;
+  padding-inline: clamp(1.25rem, 10vw, 12rem);
   display: flex;
   justify-content: center;
   padding-bottom: 0;
@@ -292,6 +292,10 @@ padding-inline: 12rem;
 // ==========================================================
 
 @media (max-width: 900px) {
+  .integrations-section {
+    padding-inline: 1.25rem;
+  }
+
   .integrations-card {
     width: calc(100% - 2rem);
 
@@ -328,6 +332,7 @@ padding-inline: 12rem;
 @media (max-width: 650px) {
   .integrations-section {
     padding-block: 4rem;
+    padding-inline: 1rem;
   }
 
   .integrations-card {
@@ -335,7 +340,7 @@ padding-inline: 12rem;
 
     align-items: flex-start;
 
-    min-height: 650px;
+    min-height: 550px;
 
     width: calc(100% - 1.5rem);
 
@@ -345,18 +350,16 @@ padding-inline: 12rem;
   .integrations-content {
     width: 100%;
 
-    padding: 3rem 2rem 0;
+    padding: 5rem 2rem 0;
   }
 
   .integrations-title {
-    font-size: clamp(2.5rem, 11vw, 4rem);
-
-    line-height: 1;
+    font-size: clamp(1.8rem, 8vw, 4rem);
+    line-height: 1.1;
   }
 
   .integrations-description {
     font-size: 0.95rem;
-
     max-width: 100%;
   }
 
@@ -364,18 +367,50 @@ padding-inline: 12rem;
     top: auto;
     right: 0;
     bottom: 0;
-
     width: 100%;
-
-    height: 300px;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    justify-items: center;
-
-    padding-inline: 2rem;
-
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    // gap: 1.5rem;
+    padding-inline: 0;
+    // margin-top: -12rem;
+    padding-bottom: 2rem;
     box-sizing: border-box;
+
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+
+  .integrations-column {
+    height: auto;
+    width: 100%;
+  }
+
+  .integrations-track {
+    flex-direction: row;
+    width: max-content;
+    gap: 1.5rem;
+  }
+
+  .integrations-column--up .integrations-track {
+    animation: integrationsMoveLeft 10s linear infinite;
+  }
+
+  .integrations-column--down .integrations-track {
+    animation: integrationsMoveRight 10s linear infinite;
   }
 
   .integration-logo {
@@ -391,19 +426,37 @@ padding-inline: 12rem;
 
 @media (max-width: 400px) {
   .integrations-card {
-    min-height: 620px;
+    min-height: 520px;
   }
 
   .integrations-content {
     padding-inline: 1.5rem;
   }
 
-  .integrations-logos {
-    padding-inline: 1rem;
-  }
-
   .integration-logo {
     width: 70px;
     height: 70px;
+  }
+}
+
+// ==========================================================
+// MOBILE HORIZONTAL ANIMATIONS
+// ==========================================================
+
+@keyframes integrationsMoveLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes integrationsMoveRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
