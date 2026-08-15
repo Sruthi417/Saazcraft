@@ -162,7 +162,7 @@ export function Reviews() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             Trusted By Teams <br />
-            <span style={{ color: "#a3aa93",fontSize : "64px", fontFamily: "Playfair Display"  }}>Worldwide</span>
+            <span style={{ color: "#a3aa93" }}>Worldwide</span>
           </motion.h2>
         </div>
 

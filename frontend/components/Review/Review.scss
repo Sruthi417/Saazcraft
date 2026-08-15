@@ -8,7 +8,7 @@
  box-sizing: border-box;
   padding-inline: clamp(1.25rem, 13.5vw, 12rem);
   padding-top: clamp(5rem, 13.5vw, 7rem);
-  padding-bottom: clamp(3rem, 13.5vw, 5rem);
+  padding-bottom: clamp(2rem, 13.5vw, 5rem);
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -45,6 +45,11 @@ font-family: "Playfair Display", serif;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--brand-dark, #111);
+  .span{
+   color: #a3aa93;
+    font-family: "Playfair Display", serif;
+    font-size: inherit;
+  }
 }
 
 

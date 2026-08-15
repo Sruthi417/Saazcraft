@@ -5,7 +5,9 @@
 .pricing-section {
   width: 100%;
 
- padding: 9rem 12rem 0rem;
+  box-sizing: border-box;
+  padding-inline: clamp(1.25rem, 13.5vw, 12rem);
+  padding-top: clamp(5rem, 13.5vw, 7rem);
   background: #ffffff;
 
   overflow: hidden;
