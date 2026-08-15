@@ -7,7 +7,7 @@
 
   box-sizing: border-box;
   padding-inline: clamp(1.25rem, 13.5vw, 12rem);
-  padding-top: clamp(5rem, 13.5vw, 7rem);
+  padding-top: clamp(6rem, 13.5vw, 7rem);
   background: #ffffff;
 
   overflow: hidden;
@@ -98,7 +98,7 @@
 
   font-family: "Playfair Display", serif;
 
-  font-size: clamp(56px, 4.8vw, 64px);
+  font-size: clamp(38px, 4.8vw, 64px);
 
   font-weight: 400;
 
@@ -254,9 +254,13 @@
 // TABLET
 // ==========================================================
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+  .partner-section {
+    padding-inline: clamp(3rem, 4vw, 6rem);
+  }
+
   .partner-container {
-    width: min(92vw, 850px);
+    width: 100%;
 
     grid-template-columns: 0.8fr 1.2fr;
 
@@ -284,13 +288,14 @@
 // MOBILE
 // ==========================================================
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .partner-section {
     padding-block: 4rem 5rem;
+    padding-inline: clamp(3rem, 4vw, 4rem);
   }
 
   .partner-container {
-    width: calc(100% - 2rem);
+    width: 100%;
 
     display: flex;
 
@@ -312,19 +317,22 @@
   .partner-content {
     order: 2;
 
-    align-items: flex-start;
+    align-items: center;
 
     max-width: 600px;
   }
 
   .partner-title {
-    font-size: clamp(2.7rem, 11vw, 4rem);
+    // font-size: clamp(2.7rem, 11vw, 4rem);
+    font-size: 30px;
 
     line-height: 1;
   }
 
   .partner-description {
     margin-top: 1.4rem;
+
+    text-align: center;
 
     font-size: 0.95rem;
 
@@ -357,16 +365,21 @@
 // ==========================================================
 
 @media (max-width: 400px) {
+   .partner-section {
+    padding-top: 3rem;
+   }
   .partner-image {
-    width: 85vw;
+    width: 90vw;
+    align-items: flex-start;
   }
 
   .partner-content {
     width: 100%;
+    align-items: center;
   }
 
   .partner-title {
-    font-size: 2.6rem;
+    
   }
 
   .partner-list li {
