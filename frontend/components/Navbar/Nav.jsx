@@ -53,9 +53,9 @@ export default function Navbar() {
         {/* Menu Items */}
         <div className={`navbar__menu${isOpen ? " navbar__menu--open" : ""}`}>
           <nav className="navbar__nav">
-            <a href="#about" onClick={() => setIsOpen(false)}>About us</a>
-            <a href="#pricing" onClick={() => setIsOpen(false)}>Pricing</a>
-            <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
+            <a href="/#about-us" onClick={() => setIsOpen(false)}>About us</a>
+            <a href="/#pricing" onClick={() => setIsOpen(false)}>Pricing</a>
+            <a href="/#contact" onClick={() => setIsOpen(false)}>Contact</a>
           </nav>
 
           {/* CTA */}

@@ -68,12 +68,12 @@ const Hero = () => {
         </motion.h1>
         <motion.p className="hero__subtitle" variants={itemVariants}>
           The all-in-one platform for seamless SaaS solutions, built
-          <br />
+          {/* <br /> */}
           to help you achieve more.
         </motion.p>
         <motion.div className="hero__actions" variants={itemVariants}>
           <button className="btn btn--primary">Get Started</button>
-          <button className="btn btn--secondary">
+          <a href="/#demo" className="btn btn--secondary">
             Watch Demo
             <span className="play-icon-wrapper">
               <svg
@@ -84,7 +84,7 @@ const Hero = () => {
                 <path d="M8 5v14l11-7z" />
               </svg>
             </span>
-          </button>
+          </a>
         </motion.div>
       </motion.div>
 

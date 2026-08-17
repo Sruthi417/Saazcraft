@@ -93,10 +93,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 24px;
+    // padding: 12px 24px;
     border-radius: 12px;
+    padding: clamp(10px, 0.8vw, 12px) clamp(18px, 1.6vw, 24px);
     font-weight: 600;
-    font-size: 1rem;
+    // font-size: 1rem;
+    font-size: clamp(14px, 1.1vw, 16px);
     cursor: pointer;
     transition: all 0.2s ease;
     border: none;
@@ -122,6 +124,7 @@
       padding: 12px 20px 12px 24px;
       border: 2px solid #d8d7cf;
       box-shadow: 0 4px 0 #c9c8c0;
+      text-decoration: none;
 
       &:hover {
         background-color: #f9fafb;
@@ -232,3 +235,4 @@
     }
   }
 }
+

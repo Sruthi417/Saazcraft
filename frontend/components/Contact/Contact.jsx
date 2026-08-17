@@ -9,7 +9,7 @@ export default function Contact() {
       <div className="contact-wrapper">
 
         {/* LEFT CONTENT */}
-        <div className="contact-content">
+        <div id="contact" className="contact-content">
           <motion.h2
             className="contact-title"
             initial={{ y: 50, opacity: 0 }}

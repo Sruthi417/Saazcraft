@@ -74,7 +74,7 @@ const toggleVideo = () => {
 
 
   return (
-    <section ref={sectionRef} className="why-section">
+    <section id="about-us" ref={sectionRef} className="why-section">
       {/* =====================================================
           LOGO MARQUEE
       ====================================================== */}
@@ -151,6 +151,7 @@ const toggleVideo = () => {
           }}
         >
           <video
+          id="demo"
             ref={videoRef}
             className="why-section__video"
             src="/video.mp4"
