@@ -249,7 +249,7 @@ margin-top: -20px;
 
 @media (max-width: 900px) {
   .faq-section {
-    padding-inline: 1.5rem;
+    padding-inline: clamp(3rem, 4vw, 6rem);
   }
 
   .faq-box {
@@ -275,13 +275,15 @@ margin-top: -20px;
 @media (max-width: 600px) {
   .faq-section {
     padding-block: 5rem;
-    padding-inline: 1rem;
+    padding-inline: clamp(2rem, 4vw, 4rem);
   }
 
   .faq-title {
-    font-size: clamp(2.8rem, 12vw, 4rem);
+    font-size: clamp(38px, 4.8vw, 64px);
 
-    line-height: 1;
+    line-height: 1.05;
+
+    letter-spacing: -0.02em;
   }
 
   .faq-box {
@@ -321,7 +323,7 @@ margin-top: -20px;
 
 @media (max-width: 400px) {
   .faq-section {
-    padding-inline: 0.75rem;
+    padding-inline: clamp(2rem, 4vw, 4rem);
   }
 
   .faq-box {
