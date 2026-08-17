@@ -1,6 +1,7 @@
 "use client";
 
 import "./Team.scss";
+import { motion } from "framer-motion";
 
 const teamMembers = [
   {
@@ -46,20 +47,38 @@ export default function Team() {
 
         {/* Heading */}
         <div className="team-heading">
-          <h2 className="team-title">Our Team</h2>
+          <motion.h2
+            className="team-title"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            Our Team
+          </motion.h2>
 
-          <p className="team-description">
+          <motion.p
+            className="team-description"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
+          >
             Meet the passionate people behind SaaZCraft. Our experienced team is
             dedicated to empowering your SaaS startup&apos;s success.
-          </p>
+          </motion.p>
         </div>
 
         {/* Team Grid */}
         <div className="team-grid">
           {teamMembers.map((member, index) => (
-            <article
+            <motion.article
               className={`team-card team-card--${index + 1}`}
               key={member.name}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: index * 0.08, duration: 0.8, ease: "easeOut" }}
             >
               <div className="team-image-wrapper">
                 <img
@@ -89,7 +108,7 @@ export default function Team() {
                   </a>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 

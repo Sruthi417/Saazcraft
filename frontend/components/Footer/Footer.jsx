@@ -1,9 +1,18 @@
+"use client";
+
+import { motion } from "framer-motion";
 import "./Footer.scss";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-card">
+      <motion.div
+        className="footer-card"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
 
         {/* TOP LOGO */}
         <div className="footer-logo">
@@ -49,15 +58,27 @@ const Footer = () => {
           <a href="#">YouTube</a>
         </div>
 
-      </div>
+      </motion.div>
 
       {/* LARGE TYPOGRAPHY */}
-      <div className="footer-wordmark">
+      <motion.div
+        className="footer-wordmark"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
+      >
         SaaZCraft
-      </div>
-      <div className="footer-copyright">
+      </motion.div>
+      <motion.div
+        className="footer-copyright"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ delay: 0.16, duration: 0.8, ease: "easeOut" }}
+      >
         <p>© 2025 SaaSCraft. All rights reserved.</p>
-      </div>
+      </motion.div>
     </footer>
   );
 };

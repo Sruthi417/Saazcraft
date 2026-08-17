@@ -1,6 +1,7 @@
 "use client";
 
 import "./Contact.scss";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
@@ -9,20 +10,38 @@ export default function Contact() {
 
         {/* LEFT CONTENT */}
         <div className="contact-content">
-          <h2 className="contact-title">
+          <motion.h2
+            className="contact-title"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             Works Seamlessly With Your
             
             Favorite Tools
-          </h2>
+          </motion.h2>
 
-          <p className="contact-description">
+          <motion.p
+            className="contact-description"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
+          >
             SaaZCraft Integrates With The Platforms You Already Use,
             Making It Easy To Bring Everything Together In One Place.
-          </p>
+          </motion.p>
         </div>
 
         {/* RIGHT FORM */}
-        <div className="contact-form-card">
+        <motion.div
+          className="contact-form-card"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ delay: 0.16, duration: 0.8, ease: "easeOut" }}
+        >
           <form className="contact-form">
 
             <div className="form-field">
@@ -59,7 +78,7 @@ export default function Contact() {
             </button>
 
           </form>
-        </div>
+        </motion.div>
 
       </div>
     </section>

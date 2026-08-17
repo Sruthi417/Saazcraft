@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import "./Faq.scss";
 
 const faqData = [
@@ -38,9 +39,15 @@ export default function FAQ() {
       <div className="faq-container">
 
         {/* Heading */}
-        <h2 className="faq-title">
+        <motion.h2
+          className="faq-title"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           Frequently Asked Questions
-        </h2>
+        </motion.h2>
 
         {/* FAQ Box */}
         <div className="faq-box">
@@ -48,9 +55,13 @@ export default function FAQ() {
             const isOpen = openIndex === index;
 
             return (
-              <div
+              <motion.div
                 className={`faq-item ${isOpen ? "faq-item--open" : ""}`}
                 key={item.question}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.08, duration: 0.8, ease: "easeOut" }}
               >
                 <button
                   type="button"
@@ -77,7 +88,7 @@ export default function FAQ() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
