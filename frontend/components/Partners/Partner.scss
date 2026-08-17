@@ -7,7 +7,8 @@
 
   box-sizing: border-box;
   padding-inline: clamp(1.25rem, 13.5vw, 12rem);
-  padding-top: clamp(6rem, 13.5vw, 7rem);
+  padding-block: clamp(6rem, 13.5vw, 7rem);
+
   background: #ffffff;
 
   overflow: hidden;
