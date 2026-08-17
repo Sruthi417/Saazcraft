@@ -4,7 +4,7 @@
 
 .contact-section {
   width: 100%;
-  padding: 5rem 10rem 7rem;
+  padding: 3rem 12rem 7rem;
 
   background: #fff;
 }
@@ -246,8 +246,12 @@
 // ==========================================================
 
 @media (max-width: 1000px) {
+  .contact-section {
+    padding-inline: clamp(3rem, 4vw, 6rem);
+  }
+
   .contact-wrapper {
-    width: min(90vw, 700px);
+    width: 100%;
 
     grid-template-columns: 1fr;
 
@@ -263,7 +267,11 @@
   }
 
   .contact-title {
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(38px, 4.8vw, 64px);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.02em;
   }
 
   .contact-description {
@@ -281,19 +289,22 @@
 
 @media (max-width: 600px) {
   .contact-section {
-    padding: 5rem 0;
+    padding-block: 3rem;
+    padding-inline: clamp(2rem, 4vw, 4rem);
   }
 
   .contact-wrapper {
-    width: calc(100% - 2rem);
+    width: 100%;
 
     gap: 3rem;
   }
 
   .contact-title {
-    font-size: clamp(2.7rem, 12vw, 4rem);
+    font-size: clamp(38px, 4.8vw, 64px);
 
-    line-height: 1;
+    line-height: 1.05;
+
+    letter-spacing: -0.02em;
   }
 
   .contact-description {

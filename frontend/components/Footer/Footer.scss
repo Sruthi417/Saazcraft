@@ -9,12 +9,11 @@
   background: #fff;
 
   overflow: hidden;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 // ==========================================================
 // FOOTER CARD
@@ -91,38 +90,28 @@
   }
 }
 
-
 // ==========================================================
 // TOP LOGO
 // ==========================================================
 
 .footer-logo {
+  display: flex;
+  align-items: center;
 
-    display: flex;
-    align-items: center;
+  justify-self: start;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  width: clamp(175px, 12vw, 215px);
 
-    justify-self: start;
-margin-top: 3rem;
-margin-left: 3rem;
-    width: clamp(
-      175px,
-      12vw,
-      215px
-    );
+  text-decoration: none;
 
-    text-decoration: none;
+  img {
+    display: block;
 
-
-    img {
-      display: block;
-
-      width: 100%;
-      height: auto;
-    }
+    width: 100%;
+    height: auto;
   }
-
-
-
+}
 
 // ==========================================================
 // LEFT NAVIGATION
@@ -160,7 +149,6 @@ margin-left: 3rem;
 .footer-nav a:hover {
   opacity: 0.55;
 }
-
 
 // ==========================================================
 // CENTER CONTACT
@@ -211,7 +199,6 @@ margin-left: 3rem;
   line-height: 1.8;
 }
 
-
 // ==========================================================
 // SOCIAL LINKS
 // ==========================================================
@@ -251,14 +238,13 @@ margin-left: 3rem;
   opacity: 0.55;
 }
 
-
 // ==========================================================
 // LARGE SAAZCRAFT WORDMARK
 // ==========================================================
 
 .footer-wordmark {
   position: relative;
-  
+
   display: flex;
   justify-content: center;
 
@@ -292,10 +278,11 @@ margin-left: 3rem;
   pointer-events: none;
 }
 
-.footer-copyright{
-  margin-top: 5rem;
+.footer-copyright {
+  margin-top: clamp(2rem, 4vw, 5rem);
   font-size: 16px;
   color: #646262;
+  margin-bottom: 3rem;
 }
 
 // ==========================================================
@@ -303,6 +290,9 @@ margin-left: 3rem;
 // ==========================================================
 
 @media (max-width: 900px) {
+  .footer {
+    padding-inline: clamp(2.5rem, 4vw, 6rem);
+  }
 
   .footer-card {
     height: 380px;
@@ -317,15 +307,14 @@ margin-left: 3rem;
   }
 }
 
-
 // ==========================================================
 // MOBILE
 // ==========================================================
 
 @media (max-width: 650px) {
-
   .footer {
-    padding: 2rem 1rem 0;
+    padding-block: 2rem 0;
+    padding-inline: clamp(1rem, 4vw, 4rem);
   }
 
   .footer-card {
@@ -392,7 +381,6 @@ margin-left: 3rem;
     font-size: 1.8rem;
   }
 
-
   // --------------------------------------------------------
   // Navigation
   // --------------------------------------------------------
@@ -403,7 +391,6 @@ margin-left: 3rem;
 
     gap: 0.8rem;
   }
-
 
   // --------------------------------------------------------
   // Contact
@@ -433,7 +420,6 @@ margin-left: 3rem;
     line-height: 1.7;
   }
 
-
   // --------------------------------------------------------
   // Socials
   // --------------------------------------------------------
@@ -449,49 +435,87 @@ margin-left: 3rem;
     font-size: 1rem;
   }
 
-
   // --------------------------------------------------------
   // Large Wordmark
   // --------------------------------------------------------
 
   .footer-wordmark {
-    font-size: 27vw;
+    width: calc(100% - 2rem);
 
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    font-size: 24vw;
     line-height: 0.7;
+
+    white-space: nowrap;
+    text-align: center;
   }
 }
-
 
 // ==========================================================
 // SMALL MOBILE
 // ==========================================================
 
 @media (max-width: 400px) {
-
   .footer-card {
-    height: 480px;
+    height: 570px;
+  }
+
+  .footer-logo {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    width: 170px;
   }
 
   .footer-contact {
-    position: relative;
+    position: absolute;
 
-    top: auto;
-    right: auto;
+    top: 18.5rem;
+    right: 1.5rem;
 
-    padding-top: 15rem;
-    padding-right: 2rem;
+    width: calc(100% - 3rem);
+    padding: 0;
 
-    align-items: flex-end;
+    align-items: center;
 
-    text-align: right;
+    transform: none;
+
+    text-align: center;
+  }
+
+  .footer-contact h3 {
+    margin-bottom: 0.45rem;
+    font-size: 1.25rem;
+  }
+
+  .footer-contact a {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    white-space: nowrap;
   }
 
   .footer-nav {
     top: 8rem;
+    left: 50%;
+
+    align-items: center;
+
+    transform: translateX(-50%);
+
+    text-align: center;
   }
 
   .footer-socials {
-    top: 20rem;
+    top: 25rem;
+    right: auto;
+    left: 50%;
+
+    align-items: center;
+
+    transform: translateX(-50%);
+
+    text-align: center;
   }
 
   .footer-wordmark {
